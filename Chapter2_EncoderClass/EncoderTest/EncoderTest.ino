@@ -1,10 +1,11 @@
 /*
- * Encoder Test
+ * Encoder Test using Class
+ * 
  * suakii@gmail.com
  */
 
-#include "class/Motor.h"
-#include "class/Encoder.h"
+#include "Motor.h"
+#include "Encoder.h"
 
 #include <MsTimer2.h>
 
@@ -34,7 +35,7 @@ void loop() {
     else {
     if (currentCount > total) {
         lhMotor.setStop();
-        Serial.println("rotate finish");
+        Serial.println("aaa");
     }
     else if (currentCount < total) 
     lhMotor.setFwd(motorSpeed);
