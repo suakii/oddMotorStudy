@@ -34,7 +34,7 @@ void loop() {
     else {
     if (currentCount > total) {
         lhMotor.setStop();
-        Serial.println("aaa");
+        Serial.println("rotate finish");
     }
     else if (currentCount < total) 
     lhMotor.setFwd(motorSpeed);
