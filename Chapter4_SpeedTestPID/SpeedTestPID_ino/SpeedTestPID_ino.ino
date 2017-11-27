@@ -125,7 +125,7 @@ void loop() {
 	if (millis()-pre_time >= 10)
   {
     pre_time = millis();
-	  motorSpeed = pulses - currentPulses;//속도의 정의를 100ms당 회전수로 정의
+	  motorSpeed = pulses - currentPulses;//속도의 정의를 10ms당 회전수로 정의
 	  currentPulses = pulses;    
   }
 
