@@ -11,7 +11,7 @@
 
 int encoderA = 2;
 int encoderB = 4;
-long deltaT = 100000;//millisecond
+long deltaT = 100000;//micro seconds = 100ms
 int ticksPerRev = 2100;
 int motorPlus = 5;//아두이노5번핀 -- 모터 드라이버의 A-1A                      
 int motorMinus = 6;//아두이노 6번핀 --모터 드라이버의 A-1B  
@@ -21,6 +21,8 @@ Encoder lhEncoder(encoderA, encoderB, deltaT,ticksPerRev);
 int state = 0;
 unsigned long pre_time = millis();
 unsigned long pre_time_delay = millis();
+unsigned long pre_time_log = millis();
+
 int  pwm = 0;
 int motorSpeed;
 
@@ -44,7 +46,7 @@ void loop() {
         pre_time_delay = millis();
         state = 1;
         pwm = 50;
-        lhMotor.setFwd(pwm);        
+        lhMotor.setFwd(pwm);  
       }
       break;
 
@@ -100,11 +102,20 @@ void loop() {
   if (millis()-pre_time >= 100)
   {
     pre_time = millis();
-	  motorSpeed = lhEncoder.getSpeed();//속도의 정의를 100ms당 회전수로 정의
+	  motorSpeed = lhEncoder.getSpeed();//엔코더 클래스에서 속도는 degrees/sec
 	  Serial.print(pwm);
     Serial.print(" ");    
     Serial.println(motorSpeed);    
   }
+  if (millis()-pre_time_log >= 100)
+  {
+    //pre_time_log = millis();
+    //motorSpeed = lhEncoder.getSpeed();//엔코더 클래스에서 속도는 degrees/sec
+    //Serial.print(pwm);
+    //Serial.print(" ");    
+    //Serial.println(motorSpeed);    
+  }
+  
 }
 
 // updates the left hand encoder when a left hand encoder event is triggered

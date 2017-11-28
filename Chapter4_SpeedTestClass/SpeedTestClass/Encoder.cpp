@@ -43,6 +43,7 @@ int Encoder::getSpeed()
 	_newCount = _count;
 	// calculate number of ticks elapsed since in last deltaT
 	int difference = _newCount - _oldCount;
+ 
 	// update _totalCount
 	_totalCount += difference;
 	int degPerSec;
