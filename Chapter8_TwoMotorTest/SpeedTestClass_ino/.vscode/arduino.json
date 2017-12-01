@@ -1,0 +1,7 @@
+{
+    "board": "arduino:avr:nano",
+    "sketch": "SpeedTestClass_ino.ino",
+    "configuration": "cpu=atmega328",
+    "output": "../build",
+    "port": "COM19"
+}
