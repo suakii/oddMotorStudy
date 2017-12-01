@@ -6,7 +6,6 @@
 */
 
 #include "SpeedControl.h"
-//#include <TimerOne.h>
 #include "src/FlexiTimer2.h"
 
 

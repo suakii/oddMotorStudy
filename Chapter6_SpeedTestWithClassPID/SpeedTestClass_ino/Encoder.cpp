@@ -86,16 +86,16 @@ void Encoder::updateCount()
 	if (digitalRead(_encoderA) == HIGH)
 	{
 		if (digitalRead(_encoderB) == LOW)
-			_count++;
-		else
 			_count--;
+		else
+			_count++;
 	}
 	else
 	{
 		if (digitalRead(_encoderB) == LOW)
-			_count--;
-		else
 			_count++;
+		else
+			_count--;
 	}
 }
 
